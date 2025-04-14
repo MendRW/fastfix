@@ -1,10 +1,10 @@
 import pandas as pd
 from openpyxl import load_workbook
-
+# it probably makes sense to remove most of the inputs here and just make people edit the script. especially the columns 
 # Global variables
-file_name = ""  # Will be set in setup()
-cols = []       # Which cols you want to use
-sheet_name = '' # Will be set in setup()
+file_name = ""  # you should need the file to be in the same folder as the script, you don't need the file extension if you dont want it. the script should handle it
+cols = []       # Which cols you want to use, You can use names or index, I could also allow you to use lettered cols if you really wanted
+sheet_name = '' # This likely could just be "Clean_data" or something if the input is annoying
 df = None       # Will hold the DataFrame
 
 def setup():
@@ -47,9 +47,11 @@ def write_sheet():
         df.to_excel(writer, sheet_name=sheet_name, index=False)
         print(f"Data successfully written to sheet '{sheet_name}'")
 
-# Execute the functions
 if __name__ == "__main__":
     setup()
     load_data()
     check_name()
+    # should be able to slap in your own functions here if you want to do some fancy things to the sheet
     write_sheet()
+
+
