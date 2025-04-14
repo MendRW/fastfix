@@ -1,0 +1,7 @@
+requires -
+-pandas
+-numpy
+-openpyxl
+
+pip install pandas numpy openpyxl
+
