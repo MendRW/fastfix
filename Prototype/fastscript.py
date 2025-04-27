@@ -1,8 +1,5 @@
-import pandas as pd
-import openpyxl
-from openpyxl import load_workbook
-from openpyxl.styles import Alignment
-import re
+from dependencies import *
+from config import *
 
 #You need to install both pandas and openpyxl > type into your cmd: pip install pandas openpyxl
 
@@ -79,10 +76,13 @@ def find_client():
     
    
 if __name__ == "__main__":
+    #Initialise
     setup() 
     load_data()
+    #Modify
     add_client_column()
     find_client()
     print(df)
+    #Finalise
     write_sheet()
     format_sheet()
