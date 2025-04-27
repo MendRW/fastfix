@@ -2,6 +2,7 @@ import pandas as pd
 import openpyxl
 from openpyxl import load_workbook
 from openpyxl.styles import Alignment
+import re
 
 #You need to install both pandas and openpyxl > type into your cmd: pip install pandas openpyxl
 
@@ -66,9 +67,10 @@ def format_sheet():
     workbook.save(output)
 
 def find_client():
-    for index, message in df['Message'].items():  # Iterate over messages
+    for index, message in df['Message'].items():
+        message = message.lower()
         for list_name, clients in client_list.items():
-            if any(client in message for client in clients): 
+            if any(re.search(r'\b' + re.escape(client.lower()) + r'\b', message) for client in clients):
                 df.at[index, 'Client'] = list_name
                 break
 
