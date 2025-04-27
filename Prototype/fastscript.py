@@ -10,7 +10,7 @@ import re
 file_name = ""  
 cols = ["ID","TeamManager","Message","Complexity","SkillSet","RequestTopic","ResolutionDetails","RequestedBy","RequestResolvedBy","Resolution","Rating","RequestorKnowledgeBase","RequestorTicketNumber"]  # Columns to use
 sheet_name = "Data"  # Worksheet name
-output = r"C:\Users\rory.wilcox\Desktop\Fast\output.xlsx"     #You need to input your desired destination where the file will be saved, it may need to be local
+output = r"C:\Users\rwilc\OneDrive\Documents\GitHub\Fast\fastfix\Prototype"     #You need to input your desired destination where the file will be saved, it may need to be local
 
 client_list = {
     "oir":["oir", "office of indsutrial relations", "the office of industrial relations", "industrial relations", "wrc", "workers comp", "workers compensation","qirc"],
